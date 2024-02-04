@@ -1,3 +1,4 @@
+const prompt = require('prompt-sync')();
 
 // get computer choice
 // returns a random selection of r, p, s
@@ -53,6 +54,13 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+function playGame() {
+    for (let i = 0; i < 5; i++) {    
+        let playerSelection = prompt("Rock, Paper, or Scissors? ");
+        playerSelection = playerSelection.toLowerCase();
+        let computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
+
+playGame();
